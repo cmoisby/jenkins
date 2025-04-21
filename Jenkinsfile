@@ -127,7 +127,7 @@ stage('Deploiement en staging'){
 
         }
     }
-    
+
     post {
     success {
         echo "This will run if the job succeeded"
@@ -135,9 +135,7 @@ stage('Deploiement en staging'){
             subject: "${env.JOB_NAME} - Build #${env.BUILD_ID} succeeded",
             body: "Good news! The build for ${env.JOB_NAME} completed successfully. Check details at ${env.BUILD_URL}"
         }
-    }
-    post { // send email when the job has failed
-        // ..
+    
         failure {
             echo "This will run if the job failed"
             mail to: "souheilby@gmail.com",
@@ -145,6 +143,5 @@ stage('Deploiement en staging'){
                 body: "For more info on the pipeline failure, check out the console output at ${env.BUILD_URL}"
         }
     }
-        // ..
 
 }
