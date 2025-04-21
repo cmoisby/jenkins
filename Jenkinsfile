@@ -126,6 +126,8 @@ stage('Deploiement en staging'){
             }
 
         }
+    }
+    
     post {
     success {
         echo "This will run if the job succeeded"
@@ -144,5 +146,5 @@ stage('Deploiement en staging'){
         }
     }
         // ..
-}
+
 }
